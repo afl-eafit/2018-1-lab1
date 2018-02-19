@@ -37,14 +37,35 @@
       repository <a href=
       "https://github.com/afl-eafit/2018-1-lab1">2018-1-lab1</a>.</li>
 
-      <li>(70%) Using the data types in the above repository defines a
-	function
+      <li>(70%) Using the data types in the above repository and using
+        a <i>suffix automaton</i> define 4 functions:
 	<pre>
 	  differentSubstrings :: String -> Int
 	</pre>
-	that takes an string <i>W</i> and returns an integer that is the
-        number of different substrings present in <i>W</i> using
-        the <i>suffix automaton</i>.
+	that takes a string <i>W</i> and returns an integer that is the
+        number of different substrings present in <i>W</i> (including
+        the empty string).
+
+        <pre>
+	  countAppearances :: String -> String -> Int
+	</pre>
+	that takes 2 strings <i>V</i> and <i>W</i> and returns an integer
+        that is the number of times <i>V</i> appears in <i>W</i>. Be wary
+        that overlapping occurrences count individually.
+
+        <pre>
+	  isSuffix :: String -> String -> Bool
+	</pre>
+	that takes 2 strings <i>V</i> and <i>W</i> and returns True if
+        <i>V</i> is a suffix of <i>W</i> and False otherwise.
+
+        <pre>
+	  isSubstring :: String -> String -> Bool
+	</pre>
+	that takes 2 strings <i>V</i> and <i>W</i> and returns True if
+        there exist at least 1 appearance of <i>V</i> in <i>W</i>
+        and False otherwise.
+
       </li>
 
       <li>(10%)
@@ -71,6 +92,12 @@
     <pre>
       GHCi> differentSubstrings "aabaa"
       11
+      GHCi> countAppearances "aa" "aaa"
+      2
+      GHCi> isSuffix "abc" "aaaabcccc"
+      False
+      GHCi> isSubstring "abc" "aaaabcccc"
+      True
     </pre>
 
     <h3>Clean code (10%)</h3>
