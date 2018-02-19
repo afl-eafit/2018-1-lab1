@@ -1,11 +1,11 @@
-module DFA where
+module NFA where
 
 import qualified Data.Map as Map
 import qualified Data.Set as Set
 
 type Delta s a = Map.Map s (Map.Map a (Set.Set s))
 
-data DFA s a = DFA
+data NFA s a = NFA
   { start  :: Set.Set s
   , final  :: Set.Set s
   , states :: Set.Set s
