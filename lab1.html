@@ -59,7 +59,8 @@
 	</pre>
 	that takes two strings <code>xs</code> and <code>ys</code> and
 	returns <code>True</code> if <code>xs</code> is a suffix of
-	<code>ys</code> and <code>False</code> otherwise.
+	<code>ys</code> and <code>False</code> otherwise. The empty
+	string is considered a suffix of every string.
 
         <pre>
 	  isSubstring :: String -> String -> Bool
@@ -94,7 +95,7 @@
 
     <pre>
       GHCi> differentSubstrings "aabaa"
-      11
+      12
       GHCi> countAppearances "aa" "aaa"
       2
       GHCi> isSuffix "abc" "aaaabcccc"
