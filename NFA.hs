@@ -17,8 +17,8 @@ initNFA :: Set.Set s -> NFA s a
 initNFA q0 = NFA q0 Set.empty q0 Set.empty Map.empty
 
 trans :: (Ord a, Ord s) => (s, a, Set.Set s) -> NFA s a -> NFA s a
-trans (q1, a, q2) (NFA q0 f q s tf)
-  | q2 == Set.empty = (NFA q0 f q s tf)
+trans (q1, a, q2) nfa@(NFA q0 f q s tf)
+  | q2 == Set.empty = nfa
   | otherwise       = NFA q0 f (Set.insert q1 (Set.union q2 q)) (Set.insert a s)
                         (insert tf)
   where
