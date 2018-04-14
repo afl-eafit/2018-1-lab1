@@ -6,8 +6,8 @@ To be used in CM0081 2018-1 lab 1. Defines NFAs and functions to create them
 -}
 module NFA where
 
-import qualified Data.Map as Map (Map, empty, singleton, insertWith, unionWith)
-import qualified Data.Set as Set (Set, empty, insert, union)
+import qualified Data.Map as Map (empty, insertWith, Map, singleton, unionWith)
+import qualified Data.Set as Set (empty, insert, Set, union)
 
 -- | Represents the transition function in an NFA
 type Delta s a = Map.Map s (Map.Map a (Set.Set s))
